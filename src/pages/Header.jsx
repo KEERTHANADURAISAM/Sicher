@@ -1,7 +1,11 @@
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
-export const Header = (props) => {
+const Header = ({ sectionRefs }) => {
+  // Scroll to the Services section when the button is clicked
+  const handleScroll = () => {
+    sectionRefs.Services.current?.scrollIntoView({ behavior: "smooth" }); // ✅ Smooth scroll to Services
+  };
+
   return (
     <Box
       sx={{
@@ -11,10 +15,9 @@ export const Header = (props) => {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        overflow: "hidden", // Prevents unwanted scrollbars
+        overflow: "hidden",
       }}
     >
-      {/* Background Image with Opacity */}
       <Box
         sx={{
           position: "absolute",
@@ -25,27 +28,11 @@ export const Header = (props) => {
           backgroundImage: "url('/iphone-1852901_1280.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "brightness(30%)", // ✅ Reduces brightness (darker effect)
+          filter: "brightness(30%)",
         }}
       />
-
-      {/* Content Box */}
-      <Box
-        sx={{
-          position: "relative",
-          zIndex: 1,
-          color: "white",
-          mt: { xs: 10, sm: 8, md: 6 },
-        }}
-      >
-        <Typography
-          variant="h1"
-          fontWeight="bold"
-          sx={{
-            fontFamily: "Raleway, sans-serif",
-            fontSize: { xs: 40, sm: 50, md: 64 },
-          }}
-        >
+      <Box sx={{ position: "relative", zIndex: 1, color: "white", mt: { xs: 10, sm: 8, md: 6 } }}>
+        <Typography variant="h1" fontWeight="bold" sx={{ fontFamily: "Raleway, sans-serif", fontSize: { xs: 40, sm: 50, md: 64 } }}>
           Welcome to Sicher
         </Typography>
         <Typography variant="h6" mt={2}>
@@ -53,6 +40,7 @@ export const Header = (props) => {
         </Typography>
         <Button
           variant="contained"
+          onClick={handleScroll} // ✅ Call function to scroll
           sx={{
             mt: 3,
             background: "linear-gradient(to right,#6278FE,#5DA0FB)",
@@ -61,9 +49,7 @@ export const Header = (props) => {
             padding: "10px",
             borderRadius: "19px",
             width: "180px",
-            "&:hover": {
-              background: "#6372FF",
-            },
+            "&:hover": { background: "#6372FF" },
           }}
         >
           Learn More
@@ -72,3 +58,5 @@ export const Header = (props) => {
     </Box>
   );
 };
+
+export default Header;

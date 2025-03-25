@@ -1,27 +1,39 @@
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Features from "./pages/Features";
-import Gallery from "./pages/Gallery";
-import { Header } from "./pages/Header";
+import React, { useRef } from "react";
 import Navbar from "./pages/Navbar";
+import Features from "./pages/Features";
+import About from "./pages/About";
 import Services from "./pages/Services";
-import TeamSection from "./pages/TeamSection";
+import Gallery from "./pages/Gallery";
 import Testimonial from "./pages/Testimonial";
+import Team from "./pages/TeamSection";
+import Contact from "./pages/Contact";
+import Header from "./pages/Header";
 
-function App() {
+const App = () => {
+  // Define refs for each section
+  const sectionRefs = {
+    Features: useRef(null),
+    About: useRef(null),
+    Services: useRef(null),
+    Gallery: useRef(null),
+    Testimonial: useRef(null),
+    Team: useRef(null),
+    Contact: useRef(null),
+  };
+
   return (
     <>
-      <Navbar />
-      <Header />
-      <Features />
-      <About />
-      <Services />
-      <Gallery />
-      <Testimonial/>
-      <TeamSection/>
-      <Contact/>
+      <Navbar sectionRefs={sectionRefs} />
+      <Header sectionRefs={sectionRefs} /> {/* ✅ Pass refs to Header */}
+      <div ref={sectionRefs.Features}><Features /></div>
+      <div ref={sectionRefs.About}><About /></div>
+      <div ref={sectionRefs.Services}><Services /></div>
+      <div ref={sectionRefs.Gallery}><Gallery /></div>
+      <div ref={sectionRefs.Testimonial}><Testimonial /></div>
+      <div ref={sectionRefs.Team}><Team /></div>
+      <div ref={sectionRefs.Contact}><Contact /></div>
     </>
   );
-}
+};
 
 export default App;

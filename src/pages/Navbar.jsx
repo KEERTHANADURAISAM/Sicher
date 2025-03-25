@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import { AppBar, Toolbar, Typography, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const Navbar = () => {
+const Navbar = ({ sectionRefs }) => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("Features");
 
-  const navItems = ["Features", "About", "Services", "Gallery", "Testimonial", "Team", "Contact"];
+  const navItems = Object.keys(sectionRefs);
+
+  const handleScroll = (section) => {
+    setActive(section);
+    setOpen(false); // Close drawer on mobile
+    const element = sectionRefs[section]?.current;
+    if (element) {
+      const offset = 70; // Adjust based on navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+    }
+  };
+  
 
   return (
     <>
@@ -22,7 +37,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Button
                 key={item}
-                onClick={() => setActive(item)}
+                onClick={() => handleScroll(item)}
                 sx={{
                   color: "#555555",
                   fontFamily: "Lato, sans-serif",
@@ -58,7 +73,7 @@ const Navbar = () => {
         <List sx={{ width: 200 }}>
           {navItems.map((item) => (
             <ListItem key={item} disablePadding>
-              <ListItemButton onClick={() => setOpen(false)}>{item}</ListItemButton>
+              <ListItemButton onClick={() => handleScroll(item)}>{item}</ListItemButton>
             </ListItem>
           ))}
         </List>

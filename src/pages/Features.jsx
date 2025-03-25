@@ -27,7 +27,8 @@ const features = [
 
 const Features = () => {
   return (
-    <Box bgcolor="#F8F9FA" py={6} textAlign="center">
+    <Box bgcolor="#F8F9FA" py={6} textAlign="center" sx={{ minHeight: "80vh", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+
       {/* Heading */}
       <Typography variant="h4" fontWeight="bold">
         FEATURES

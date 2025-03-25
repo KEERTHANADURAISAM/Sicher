@@ -92,21 +92,23 @@ const Services = () => {
               >
                 {/* Icon Circle */}
                 <Box
-                  sx={{
-                    background: "linear-gradient(to right, #627DFE, #5DA1FC)",
-                    borderRadius: "50%",
-                    width: { xs: 70, sm: 80, md: 90 },
-                    height: { xs: 70, sm: 80, md: 90 },
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                    color: "white",
-                    mb: 2,
-                  }}
-                >
-                  {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
-                </Box>
+  sx={{
+    background: "linear-gradient(to right, #627DFE, #5DA1FC)",
+    borderRadius: "50%",
+    width: { xs: 70, sm: 80, md: 90 },
+    height: { xs: 70, sm: 80, md: 90 },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+    color: "white",
+    mb: 2,
+    mx: "auto", // **Centers the icon horizontally**
+  }}
+>
+  {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
+</Box>
+
 
                 {/* Card Content */}
                 <CardContent>
