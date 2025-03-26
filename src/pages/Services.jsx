@@ -9,34 +9,34 @@ import React from "react";
 
 const services = [
   {
-    title: "Lorem ipsum dolor",
+    title: "Tax & Compliance",
     icon: <LanguageIcon />,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Expert tax consultation and compliance services for businesses and individuals.",
   },
   {
-    title: "Consectetur adipiscing",
+    title: "Audit & Assurance",
     icon: <ShoppingCartIcon />,
-    description: "Duis sed dapibus leo nec ornare diam sedas commodo.",
+    description: "Comprehensive auditing services ensuring financial accuracy and transparency.",
   },
   {
-    title: "Lorem ipsum dolor",
+    title: "Company Law Advisory",
     icon: <CloudUploadIcon />,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Expert guidance on corporate laws, helping businesses stay legally compliant.",
   },
   {
-    title: "Consectetur adipiscing",
+    title: "Business Consulting",
     icon: <TranslateIcon />,
-    description: "Duis sed dapibus leo nec ornare diam sedas commodo.",
+    description: "Strategic business advisory services to drive growth and profitability.",
   },
   {
-    title: "Lorem ipsum dolor",
+    title: "Financial Planning",
     icon: <FlightTakeoffIcon />,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Tailored financial solutions for wealth management and future security.",
   },
   {
-    title: "Consectetur adipiscing",
+    title: "Risk Management",
     icon: <BarChartIcon />,
-    description: "Duis sed dapibus leo nec ornare diam sedas commodo.",
+    description: "Identifying and mitigating financial risks for sustainable business growth.",
   },
 ];
 
@@ -44,7 +44,7 @@ const Services = () => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(to right, #627DFE, #5DA1FC)", // Gradient background
+        background: "linear-gradient(to right, #627DFE, #5DA1FC)",
         color: "RGB(255, 255, 255)",
         py: 8,
       }}
@@ -63,8 +63,7 @@ const Services = () => {
         <Box width="60px" height="4px" bgcolor="#8FAFFE" mx="auto" my={2} />
 
         <Typography variant="body1" textAlign="center" mt={1} mb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-          dapibus leonec.
+          We provide expert financial, tax, and business consulting services to help you succeed.
         </Typography>
 
         {/* Services Grid */}
@@ -80,7 +79,7 @@ const Services = () => {
                 sx={{
                   textAlign: "center",
                   p: 3,
-                  backdropFilter: "blur(5px)", // Glass effect
+                  backdropFilter: "blur(5px)",
                   borderRadius: 3,
                   transition: "all 0.3s",
                   "&:hover": {
@@ -92,23 +91,22 @@ const Services = () => {
               >
                 {/* Icon Circle */}
                 <Box
-  sx={{
-    background: "linear-gradient(to right, #627DFE, #5DA1FC)",
-    borderRadius: "50%",
-    width: { xs: 70, sm: 80, md: 90 },
-    height: { xs: 70, sm: 80, md: 90 },
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-    color: "white",
-    mb: 2,
-    mx: "auto", // **Centers the icon horizontally**
-  }}
->
-  {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
-</Box>
-
+                  sx={{
+                    background: "linear-gradient(to right, #627DFE, #5DA1FC)",
+                    borderRadius: "50%",
+                    width: { xs: 70, sm: 80, md: 90 },
+                    height: { xs: 70, sm: 80, md: 90 },
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                    color: "white",
+                    mb: 2,
+                    mx: "auto",
+                  }}
+                >
+                  {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
+                </Box>
 
                 {/* Card Content */}
                 <CardContent>

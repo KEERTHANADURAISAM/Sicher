@@ -102,9 +102,9 @@ const Contact = () => {
   }}
 >
   {[
-    { icon: <LocationOn sx={{ color: "#FFD700", fontSize: 28 }} />, text: "4321 California St, San Francisco, CA" },
-    { icon: <Phone sx={{ color: "#32CD32", fontSize: 28 }} />, text: "+1 123 456 1234" },
-    { icon: <Email sx={{ color: "#FF4500", fontSize: 28 }} />, text: "info@company.com" }
+    { icon: <LocationOn sx={{ color: "#FFD700", fontSize: 28 }} />, text: "Sicher Shared Services Private Limited  89, Balaji Nagar, Kalapatti Post, Coimbatore – 641048" },
+    { icon: <Phone sx={{ color: "#32CD32", fontSize: 28 }} />, text: "8667289653" },
+    { icon: <Email sx={{ color: "#FF4500", fontSize: 28 }} />, text: " ca.jeeva93@gmail.com" }
   ].map((item, index) => (
     <Box 
       key={index} 

@@ -8,6 +8,7 @@ import Testimonial from "./pages/Testimonial";
 import Team from "./pages/TeamSection";
 import Contact from "./pages/Contact";
 import Header from "./pages/Header";
+import ClientPage from "./pages/ClientPage";
 
 const App = () => {
   // Define refs for each section
@@ -31,6 +32,7 @@ const App = () => {
       <div ref={sectionRefs.Gallery}><Gallery /></div>
       <div ref={sectionRefs.Testimonial}><Testimonial /></div>
       <div ref={sectionRefs.Team}><Team /></div>
+      <ClientPage/>
       <div ref={sectionRefs.Contact}><Contact /></div>
     </>
   );

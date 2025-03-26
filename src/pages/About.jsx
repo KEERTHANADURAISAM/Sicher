@@ -22,7 +22,7 @@ const About = () => {
             alt="About Us"
             sx={{
               width: "100%",
-              boxShadow: "10px 10px 30px rgba(0, 0, 0, 0.2)", // Soft shadow
+              boxShadow: "10px 10px 30px rgba(0, 0, 0, 0.2)",
               transition: "filter 0.3s ease-in-out",
               "&:hover": {
                 filter: "blur(0px)",
@@ -44,10 +44,10 @@ const About = () => {
           </Typography>
           <Box width="60px" height="4px" bgcolor="#627DFE" mx={0} />
           <Typography variant="body1" color="text.secondary" paragraph mt={2}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Sicher Shared Services P Ltd is a leading company specializing in
+            Income Tax, Company Law, and Audit services. Our team is dedicated
+            to providing businesses and individuals with comprehensive financial
+            solutions, ensuring compliance and financial success.
           </Typography>
 
           <Typography variant="h6" fontWeight="bold" sx={{ mt: 2 }}>
@@ -58,12 +58,7 @@ const About = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <List dense>
-                {[
-                  "Lorem ipsum dolor",
-                  "Tempor incididunt",
-                  "Lorem ipsum dolor",
-                  "Incididunt ut labore",
-                ].map((item, index) => (
+                {["Expert Tax Consultation", "Comprehensive Auditing", "Regulatory Compliance", "Business Advisory"].map((item, index) => (
                   <ListItem key={index}>
                     <ListItemIcon>
                       <CheckCircleIcon color="primary" />
@@ -75,12 +70,7 @@ const About = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <List dense>
-                {[
-                  "Aliquip ex ea commodo",
-                  "Lorem ipsum dolor",
-                  "Exercitation ullamco",
-                  "Lorem ipsum dolor",
-                ].map((item, index) => (
+                {["Company Law Expertise", "Client-Centric Approach", "Strategic Financial Planning", "12+ Years of Experience"].map((item, index) => (
                   <ListItem key={index}>
                     <ListItemIcon>
                       <CheckCircleIcon color="primary" />
