@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, Typography, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton } from "@mui/material";
+import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+
+// If the image is in the public folder, use this:
+const logo = "/Sicher Shared logo Final.png"; 
 
 const Navbar = ({ sectionRefs }) => {
   const [open, setOpen] = useState(false);
@@ -10,27 +13,24 @@ const Navbar = ({ sectionRefs }) => {
 
   const handleScroll = (section) => {
     setActive(section);
-    setOpen(false); // Close drawer on mobile
+    setOpen(false); 
     const element = sectionRefs[section]?.current;
     if (element) {
-      const offset = 70; // Adjust based on navbar height
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
-        top: elementPosition - offset,
+        top: element.getBoundingClientRect().top + window.scrollY - 70,
         behavior: "smooth",
       });
     }
   };
-  
 
   return (
     <>
-      <AppBar position="sticky" sx={{ backgroundColor: "#FFFFFF", color: "black", height: "80px", padding: "5px" }}>
+      <AppBar position="sticky" sx={{ backgroundColor: "#FFFFFF", color: "black", height: "100px", padding: "5px" }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Brand Name */}
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            SICHER
-          </Typography>
+          {/* Logo */}
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <img src={logo} alt="Sicher Logo" style={{ height: "150px", width: "auto" }} />
+          </Box>
 
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
@@ -40,7 +40,6 @@ const Navbar = ({ sectionRefs }) => {
                 onClick={() => handleScroll(item)}
                 sx={{
                   color: "#555555",
-                  fontFamily: "Lato, sans-serif",
                   fontSize: "1rem",
                   position: "relative",
                   "&:after": {
