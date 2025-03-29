@@ -3,7 +3,12 @@ import { Box, Button, Typography } from "@mui/material";
 const Header = ({ sectionRefs }) => {
   // Scroll to the Services section when the button is clicked
   const handleScroll = () => {
-    sectionRefs.Services.current?.scrollIntoView({ behavior: "smooth" }); // ✅ Smooth scroll to Services
+    const section = sectionRefs.Services.current;
+    if (section) {
+      const yOffset = -80; // Adjust this based on your header height
+      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
 
   return (
