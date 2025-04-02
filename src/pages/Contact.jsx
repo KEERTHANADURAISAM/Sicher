@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Container, Grid, TextField, Button, Typography, Box } from "@mui/material";
 import { Email, Phone, LocationOn } from "@mui/icons-material";
 import contact from "/message.png";
+import { Toaster, toast } from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -30,12 +31,12 @@ const Contact = () => {
     if (!validateForm()) return;
 
     emailjs
-      .send("service_qkzqv5s", "YOUR_TEMPLATE_ID", formData, "YOUR_PUBLIC_KEY")
+      .send("service_b2zg2d5", "template_v0yfjjc", formData, "da640-A6BC8T790z-")
       .then(() => {
-        alert("Message sent successfully!");
+        toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert("Failed to send message. Try again."));
+      .catch(() => toast.error("Failed to send message. Try again."));
   };
 
   return (
@@ -50,6 +51,7 @@ const Contact = () => {
       }}
     >
       <Container>
+        <Toaster /> {/* Toaster added here */}
         <Grid
           container
           spacing={0}
@@ -93,61 +95,49 @@ const Contact = () => {
                 borderRadius: 2,
               }}
             />
-            <Box 
-  mt={3} 
-  sx={{ 
-    textAlign: "center", 
-    width: "100%", 
-    px: 3 
-  }}
->
-  {[
-    { icon: <LocationOn sx={{ color: "#FFD700", fontSize: 28 }} />, text: "Sicher Shared Services Private Limited  89, Balaji Nagar, Kalapatti Post, Coimbatore – 641048" },
-    { icon: <Phone sx={{ color: "#32CD32", fontSize: 28 }} />, text: "8667289653" },
-    { icon: <Email sx={{ color: "#FF4500", fontSize: 28 }} />, text: " ca.jeeva93@gmail.com" }
-  ].map((item, index) => (
-    <Box 
-      key={index} 
-      sx={{ 
-        display: "flex", 
-        alignItems: "center", 
-        justifyContent: { xs: "center", sm: "flex-start" }, // Aligns left on larger screens
-        gap: 1.5, 
-        py: 1, 
-        px: 2,
-        borderRadius: 2,
-        backgroundColor: "rgba(255, 255, 255, 0.05)",
-        boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
-        maxWidth: "500px",
-        mx: "auto",
-        mb: 1
-      }}
-    >
-      <Box 
-        sx={{ 
-          display: "flex", 
-          alignItems: "center",
-          justifyContent: "center",
-          width: 40,
-          height: 40,
-          backgroundColor: "rgba(255,255,255,0.15)",
-          borderRadius: "50%",
-        }}
-      >
-        {item.icon}
-      </Box>
-      <Typography 
-        variant="body1" 
-        fontWeight="500" 
-        sx={{ textAlign: "left", flex: 1 }}
-      >
-        {item.text}
-      </Typography>
-    </Box>
-  ))}
-</Box>
-
-                      </Grid>
+            <Box mt={3} sx={{ textAlign: "center", width: "100%", px: 3 }}>
+              {[
+                { icon: <LocationOn sx={{ color: "#FFD700", fontSize: 28 }} />, text: "Sicher Shared Services Private Limited  89, Balaji Nagar, Kalapatti Post, Coimbatore – 641048" },
+                { icon: <Phone sx={{ color: "#32CD32", fontSize: 28 }} />, text: "8667289653" },
+                { icon: <Email sx={{ color: "#FF4500", fontSize: 28 }} />, text: "ca.jeeva93@gmail.com" }
+              ].map((item, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: { xs: "center", sm: "flex-start" }, // Aligns left on larger screens
+                    gap: 1.5,
+                    py: 1,
+                    px: 2,
+                    borderRadius: 2,
+                    backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.1)",
+                    maxWidth: "500px",
+                    mx: "auto",
+                    mb: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: 40,
+                      height: 40,
+                      backgroundColor: "rgba(255,255,255,0.15)",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Typography variant="body1" fontWeight="500" sx={{ textAlign: "left", flex: 1 }}>
+                    {item.text}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
 
           {/* Right Section - Contact Form */}
           <Grid
@@ -222,10 +212,9 @@ const Contact = () => {
           </Grid>
         </Grid>
         <p style={{ textAlign: "center", fontSize: "14px", color: "white", marginTop: "20px" }}>
-  Designed & Developed by <strong>Keerthana Duraisamy</strong> © 2025
-</p>
+          Designed & Developed by <strong>Keerthana Duraisamy</strong> © 2025
+        </p>
       </Container>
-    
     </Box>
   );
 };
