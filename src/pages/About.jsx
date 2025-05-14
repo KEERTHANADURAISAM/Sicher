@@ -5,10 +5,11 @@ import {
   Typography,
   List,
   ListItem,
-  ListItemIcon,
+  ListItemIcon, 
   ListItemText,
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
 
 const About = () => {
   return (
@@ -70,7 +71,7 @@ const About = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <List dense>
-                {["Company Law Expertise", "Client-Centric Approach", "Strategic Financial Planning", "12+ Years of Experience"].map((item, index) => (
+                {["Company Law Expertise", "Client-Centric Approach", "Strategic Financial Planning", "3+ Years of Experience"].map((item, index) => (
                   <ListItem key={index}>
                     <ListItemIcon>
                       <CheckCircleIcon color="primary" />

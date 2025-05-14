@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import { Container, Typography, Box } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Testimonial from "./Testimonial";
+import StatusCounter from "./StatusCounter";
 
 const clientLogos = [
   { name: "Client 1", logo: "/logo2.jpg" },
@@ -29,6 +31,7 @@ const settings = {
 
 const ClientPage = () => {
   return (
+    <Box>
     <Container sx={{ py: 6, textAlign: "center" }}>
       <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
         OUR VALUED CLIENTS
@@ -42,6 +45,10 @@ const ClientPage = () => {
         ))}
       </Slider>
     </Container>
+    {/* Testimonial */}
+    <Testimonial/>
+    <StatusCounter/>
+    </Box>
   );
 };
 

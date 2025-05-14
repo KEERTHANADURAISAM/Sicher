@@ -42,7 +42,7 @@ const Contact = () => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(to right, #627DFE, #5DA1FC)",
+        // background: "linear-gradient(to right, #627DFE, #5DA1FC)",
         py: 10,
         display: "flex",
         justifyContent: "center",
@@ -149,6 +149,7 @@ const Contact = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+            maxWidth:600
             }}
           >
             <Typography variant="h5" fontWeight="bold" textAlign="center" mb={2}>
@@ -211,9 +212,7 @@ const Contact = () => {
             </form>
           </Grid>
         </Grid>
-        <p style={{ textAlign: "center", fontSize: "14px", color: "white", marginTop: "20px" }}>
-          Designed & Developed by <strong>Keerthana Duraisamy</strong> © 2025
-        </p>
+      
       </Container>
     </Box>
   );

@@ -26,7 +26,7 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <Container sx={{ py: 6 }}>
+    <Container sx={{ py: 6,backgroundColor:'white'}}>
       {/* Section Title */}
       <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: "bold" }}>
         MEET THE TEAM

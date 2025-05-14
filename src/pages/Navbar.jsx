@@ -1,27 +1,35 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemButton } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link, useLocation } from "react-router-dom";
 
-// If the image is in the public folder, use this:
-const logo = "/Sicher Shared logo Final.png"; 
+// Logo from public folder
+const logo = "/Sicher Shared logo Final.png";
 
-const Navbar = ({ sectionRefs }) => {
+const navItems = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  // { label: "Gallery", path: "/gallery" },
+  // { label: "Testimonials", path: "/testimonials" },
+  { label: "Team", path: "/team" },
+  { label: "Clients", path: "/clients" },
+  { label: "Contact", path: "/contact" },
+];
+
+const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("Features");
-
-  const navItems = Object.keys(sectionRefs);
-
-  const handleScroll = (section) => {
-    setActive(section);
-    setOpen(false); 
-    const element = sectionRefs[section]?.current;
-    if (element) {
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - 70,
-        behavior: "smooth",
-      });
-    }
-  };
+  const location = useLocation();
 
   return (
     <>
@@ -29,15 +37,18 @@ const Navbar = ({ sectionRefs }) => {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Logo */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <img src={logo} alt="Sicher Logo" style={{ height: "150px", width: "auto" }} />
+            <Link to="/">
+              <img src={logo} alt="Sicher Logo" style={{ height: "150px", width: "auto" }} />
+            </Link>
           </Box>
 
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-            {navItems.map((item) => (
+            {navItems.map(({ label, path }) => (
               <Button
-                key={item}
-                onClick={() => handleScroll(item)}
+                key={label}
+                component={Link}
+                to={path}
                 sx={{
                   color: "#555555",
                   fontSize: "1rem",
@@ -45,7 +56,7 @@ const Navbar = ({ sectionRefs }) => {
                   "&:after": {
                     content: '""',
                     display: "block",
-                    width: active === item ? "100%" : "0%",
+                    width: location.pathname === path ? "100%" : "0%",
                     height: "3px",
                     background: "linear-gradient(to right,#6278FE,#5DA0FB)",
                     position: "absolute",
@@ -55,7 +66,7 @@ const Navbar = ({ sectionRefs }) => {
                   },
                 }}
               >
-                {item}
+                {label}
               </Button>
             ))}
           </Box>
@@ -70,9 +81,11 @@ const Navbar = ({ sectionRefs }) => {
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <List sx={{ width: 200 }}>
-          {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-              <ListItemButton onClick={() => handleScroll(item)}>{item}</ListItemButton>
+          {navItems.map(({ label, path }) => (
+            <ListItem key={label} disablePadding>
+              <ListItemButton component={Link} to={path} onClick={() => setOpen(false)}>
+                {label}
+              </ListItemButton>
             </ListItem>
           ))}
         </List>
@@ -82,3 +95,7 @@ const Navbar = ({ sectionRefs }) => {
 };
 
 export default Navbar;
+
+
+
+

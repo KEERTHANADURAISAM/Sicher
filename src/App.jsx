@@ -1,5 +1,12 @@
-import React, { useRef } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Common Components
 import Navbar from "./pages/Navbar";
+import ClientPage from "./pages/ClientPage";
+
+// Page Components
+// import Navbar from "./pages/Navbar";
 import Features from "./pages/Features";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -8,33 +15,26 @@ import Testimonial from "./pages/Testimonial";
 import Team from "./pages/TeamSection";
 import Contact from "./pages/Contact";
 import Header from "./pages/Header";
-import ClientPage from "./pages/ClientPage";
+import Home from "./pages/Home";
+import Footer from "./pages/Footer";
+// import ClientPage from "./pages/ClientPage";
 
 const App = () => {
-  // Define refs for each section
-  const sectionRefs = {
-    Features: useRef(null),
-    About: useRef(null),
-    Services: useRef(null),
-    Gallery: useRef(null),
-    Testimonial: useRef(null),
-    Team: useRef(null),
-    Contact: useRef(null),
-  };
-
   return (
-    <>
-      <Navbar sectionRefs={sectionRefs} />
-      <Header sectionRefs={sectionRefs} /> {/* ✅ Pass refs to Header */}
-      <div ref={sectionRefs.Features}><Features /></div>
-      <div ref={sectionRefs.About}><About /></div>
-      <div ref={sectionRefs.Services}><Services /></div>
-      <div ref={sectionRefs.Gallery}><Gallery /></div>
-      <div ref={sectionRefs.Testimonial}><Testimonial /></div>
-      <div ref={sectionRefs.Team}><Team /></div>
-      <ClientPage/>
-      <div ref={sectionRefs.Contact}><Contact /></div>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/testimonials" element={<Testimonial />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/clients" element={<ClientPage />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer/>
+    </Router>
   );
 };
 
