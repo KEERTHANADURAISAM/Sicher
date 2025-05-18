@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import Header from "./pages/Header";
 import Home from "./pages/Home";
 import Footer from "./pages/Footer";
+import AboutSection from "./pages/AboutSection";
 // import ClientPage from "./pages/ClientPage";
 
 const App = () => {
@@ -25,7 +26,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutSection />} />
         <Route path="/services" element={<Services />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/testimonials" element={<Testimonial />} />

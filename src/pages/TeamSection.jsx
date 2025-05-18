@@ -71,14 +71,19 @@ const TeamSection = () => {
                   },
                 }}
               />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                  {member.name}
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  {member.role}
-                </Typography>
-              </CardContent>
+             <CardContent>
+  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+    {member.name}
+  </Typography>
+  <Typography variant="subtitle1" color="textSecondary">
+    {member.role}
+  </Typography>
+  {member.description && (
+    <Typography variant="body2" color="textSecondary" mt={1}>
+      {member.description}
+    </Typography>
+  )}
+</CardContent>
             </Card>
           </Grid>
         ))}
