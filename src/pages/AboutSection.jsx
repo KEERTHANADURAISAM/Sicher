@@ -10,13 +10,12 @@ const AboutSection = () => {
         <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
           About Sicher Shared Services P Ltd
         </Typography>
-        <Divider sx={{ width: 100, height: 4, backgroundColor: "#1e3a5f", mx: "auto", my: 2 }} />
+        <Box width="200px" height="4px" bgcolor="#8FAFFE" mx="auto" my={2} />
         <Typography variant="body1" align="center" color="text.secondary" mb={5} sx={{ maxWidth: "800px", mx: "auto" }}>
           Sicher Shared Services P Ltd is a leading Company specializing in Income Tax, Company Law, and Audit services. 
           Established with a vision to provide comprehensive and proficient financial solutions to businesses and individuals, 
           we have consistently delivered excellence in our services, earning the trust and confidence of our clients.
         </Typography>
-
         {/* Mission & Vision */}
         <Grid container spacing={4} mb={8}>
           <Grid item xs={12} md={6}>
