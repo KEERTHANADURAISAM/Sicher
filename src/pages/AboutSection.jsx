@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Paper, Divider, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
 import { CheckCircle, Users, Building, Trophy, Clock, FileCheck } from "lucide-react";
+import keyStrength from '/keyStrength.jpg'
 
 const AboutSection = () => {
   return (
@@ -17,7 +18,7 @@ const AboutSection = () => {
           we have consistently delivered excellence in our services, earning the trust and confidence of our clients.
         </Typography>
         {/* Mission & Vision */}
-        <Grid container spacing={4} mb={8}>
+        {/* <Grid container spacing={4} mb={8}>
           <Grid item xs={12} md={6}>
             <Paper elevation={3} sx={{ p: 4, height: "100%", borderTop: "4px solid #1e3a5f" }}>
               <Typography variant="h5" fontWeight="bold" gutterBottom color="#1e3a5f">
@@ -41,90 +42,34 @@ const AboutSection = () => {
               </Typography>
             </Paper>
           </Grid>
-        </Grid>
+        </Grid> */}
 
         {/* Key Strengths */}
-        <Typography variant="h5" fontWeight="bold" gutterBottom align="center" sx={{ mb: 3 }}>
-          Our Key Strengths
-        </Typography>
-        <Grid container spacing={3} mb={8}>
-          {[
-            {
-              title: "Strategic Insight",
-              icon: <Trophy size={24} />,
-              description: "We leverage our in-depth knowledge of tax laws and regulations to provide strategic insights that optimize our clients' financial positions and minimize tax liabilities."
-            },
-            {
-              title: "Compliance Assurance",
-              icon: <FileCheck size={24} />,
-              description: "With a meticulous approach, we ensure full compliance with relevant laws, regulations, and standards, mitigating risks and optimizing financial performance."
-            },
-            {
-              title: "Client Empowerment",
-              icon: <Users size={24} />,
-              description: "Empowering our clients with knowledge and guidance is at the core of our philosophy. We remain accessible, responsive, and committed to delivering personalized attention and support."
-            },
-            {
-              title: "Continuous Learning",
-              icon: <Clock size={24} />,
-              description: "In a dynamic and evolving tax landscape, we prioritize continuous learning and professional development to stay abreast of industry trends, legislative changes, and emerging best practices."
-            },
-          ].map((strength, i) => (
-          
-  <Grid item xs={12} sm={6} key={i}>
-    <Paper
-      elevation={2}
-      sx={{
-        p: 4,
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "linear-gradient(to right, #627DFE, #5DA1FC)",
-        color: "RGB(255, 255, 255)",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          mb: 2,
-        }}
-      >
-        <Box
-          sx={{
-            background: "linear-gradient(to right, #627DFE, #5DA1FC)",
-            borderRadius: "50%",
-            width: { xs: 70, sm: 80, md: 90 },
-            height: { xs: 70, sm: 80, md: 90 },
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-            color: "white",
-            mb: 2,
-          }}
-        >
-          {strength.icon}
-        </Box>
-
-        <Typography variant="h6" fontWeight="bold" color="white" align="center">
-          {strength.title}
-        </Typography>
-      </Box>
-
-      <Typography variant="body2" align="center">
-        {strength.description}
-      </Typography>
-    </Paper>
-  </Grid>
-))}
-
-          
-        </Grid>
-
+      
+<Box
+  sx={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    mb: 3,
+    bgcolor:'#FEFAF7'
+  }}
+>
+   <Typography variant="h5" fontWeight="bold" gutterBottom align="center" sx={{ mt:12 }}>
+  Our Key Strengths
+</Typography>
+  <Box
+    component="img"
+    src={keyStrength}
+    alt="keyStrength"
+    sx={{
+      width: "100%",
+      maxWidth: 500, // Increased from 200 to 400
+      // mt: 2,
+      borderRadius: 2,
+    }}
+  />
+</Box>
         {/* Services */}
         <Grid container spacing={6} mb={8}>
           <Grid item xs={12} md={6}>
