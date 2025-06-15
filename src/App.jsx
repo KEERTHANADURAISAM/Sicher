@@ -18,7 +18,7 @@ import Header from "./pages/Header";
 import Home from "./pages/Home";
 import Footer from "./pages/Footer";
 import AboutSection from "./pages/AboutSection";
-// import ClientPage from "./pages/ClientPage";
+import ServicePages from "./pages/ServicePages";
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutSection />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<ServicePages />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/testimonials" element={<Testimonial />} />
         <Route path="/team" element={<Team />} />

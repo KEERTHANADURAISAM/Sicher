@@ -19,7 +19,7 @@ const Gallery = () => {
       <Container>
         {/* Gallery Heading */}
         <Typography variant="h2" fontSize="36px" fontWeight="bold" textAlign="center" mb={2}>
-          GALLERY
+          OUR PROJECT WORKS
         </Typography>
         <Box width="60px" height="4px" bgcolor="#627DFE" mx="auto" my={2} />
         <Typography variant="body1" textAlign="center" mb={4}>
