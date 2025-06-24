@@ -108,7 +108,7 @@ const DirectorProfiles = () => {
             sx={{
               width: 96,
               height: 4,
-              background: 'linear-gradient(90deg, #1976d2, #00acc1)',
+              gradient: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
               mx: 'auto',
               borderRadius: 2,
             }}
