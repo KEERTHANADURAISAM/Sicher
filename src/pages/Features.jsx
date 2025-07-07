@@ -1,27 +1,41 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { FaComments, FaBullhorn, FaUsers, FaMagic } from "react-icons/fa";
+import { 
+  FaClipboardCheck, 
+  FaFileInvoice, 
+  FaChartBar, 
+  FaShieldAlt, 
+  FaSearch, 
+  FaCertificate 
+} from 'react-icons/fa';
 
 const features = [
   {
-    icon: <FaComments size={30} color="white" />,
-    title: "Live Chat Support",
-    description: "Get instant support with our 24/7 live chat service.",
+    icon: <FaClipboardCheck size={30} color="white" />,
+    title: "Audit Management",
+    description: "Streamline your audit processes with comprehensive management tools.",
   },
   {
-    icon: <FaBullhorn size={30} color="white" />,
-    title: "Marketing Tools",
-    description: "Boost your business with our powerful marketing tools.",
+    icon: <FaFileInvoice size={30} color="white" />,
+    title: "Compliance Tracking",
+    description: "Monitor and track compliance requirements with automated reporting.",
   },
+  // {
+  //   icon: <FaChartBar size={30} color="white" />,
+  //   title: "Risk Assessment",
+  //   description: "Identify and analyze potential risks with advanced assessment tools.",
+  // },
   {
-    icon: <FaUsers size={30} color="white" />,
-    title: "Community Support",
-    description: "Join a strong community and get valuable insights.",
+    icon: <FaShieldAlt size={30} color="white" />,
+    title: "Security Audits",
+    description: "Conduct thorough security audits to protect your organization.",
   },
+ 
   {
-    icon: <FaMagic size={30} color="white" />,
-    title: "Easy Customization",
-    description: "Customize everything with simple and easy-to-use tools.",
+    icon: <FaCertificate size={30} color="white" />,
+    title: "Certification Management",
+    description: "Manage certifications and maintain regulatory compliance standards.",
   },
 ];
 

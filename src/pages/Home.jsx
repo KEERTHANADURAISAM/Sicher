@@ -7,6 +7,7 @@ import Services from "./Services";
 import ClientPage from "./ClientPage";
 import StatusCounter from "./StatusCounter";
 
+         import { Link } from 'react-router-dom';
 // Hero video
 const videoSrc = "/Sicherbg1.mp4";
 
@@ -102,27 +103,29 @@ const Home = () => {
           <Typography variant="h6" sx={{ maxWidth: 800, mx: "auto", mb: 3,mt:3,letterSpacing:3,fontFamily: "Quicksand, sans-serif", }}>
          Accounting - Taxes - Audit 
           </Typography>
-          <Button
-          variant="contained"
-           sx={{
-            mt: 3,
-            background: "linear-gradient(to right,#6278FE,#5DA0FB)",
-            color: "white",
-            fontWeight: "bold",
-                fontFamily: "Raleway, sans-serif",
-      px: 3,
-      py: 1.5,
-      color: "white",
-      letterSpacing:3,
-      transition: "0.3s",
-            padding: "10px",
-            borderRadius: "19px",
-            width: "180px",
-            "&:hover": { background: "#6372FF" },
-          }}
-        >
-          Learn More
-        </Button>
+
+<Button
+  component={Link}
+  to="/services"
+  variant="contained"
+  sx={{
+    mt: 3,
+    background: "linear-gradient(to right,#6278FE,#5DA0FB)",
+    color: "white",
+    fontWeight: "bold",
+    fontFamily: "Raleway, sans-serif",
+    px: 3,
+    py: 1.5,
+    letterSpacing: 3,
+    transition: "0.3s",
+    padding: "10px",
+    borderRadius: "19px",
+    width: "180px",
+    "&:hover": { background: "#6372FF" },
+  }}
+>
+  Learn More
+</Button>
         </Box>
       </Box>
 

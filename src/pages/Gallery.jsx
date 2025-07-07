@@ -2,15 +2,51 @@ import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
 const galleryImages = [
-  { src: "./360_F_415765406_bNYus3fB14MOQEBTwFM6WeCmj7byxGRO.jpg", title: "Project 1" },
-  { src: "./medium-shot-man-working-laptop.jpg", title: "Project 2" },
-  { src: "./undraw_at-the-airport_z3b9.png", title: "Project 3" },
-  { src: "./revenue-income-money-profit-costs-budget-banking-concept.jpg", title: "Project 4" },
-  { src: "./header2.png", title: "Project 5" },
-  { src: "./stock-market-exchange-economics-investment-graph.jpg", title: "Project 6" },
-  { src: "./finance-economics-work-male-discussion-laptop.jpg", title: "Project 7" },
-  { src: "./businesspeople-working-finance-accounting-analyze-financi.jpg", title: "Project 8" },
-  { src: "./businesspeople-working-finance-accounting-analyze-financial-graph-budget-planning-future-office-room.jpg", title: "Project 9" },
+  { 
+    src: "./360_F_415765406_bNYus3fB14MOQEBTwFM6WeCmj7byxGRO.jpg", 
+    title: "Shasha Solar P Ltd",
+    service: "Solar Energy Audit & Compliance"
+  },
+  { 
+    src: "./medium-shot-man-working-laptop.jpg", 
+    title: "Pearl Property Developers",
+    service: "Property Development Audit"
+  },
+  { 
+    src: "./undraw_at-the-airport_z3b9.png", 
+    title: "Hotel Prince Gardens",
+    service: "Hospitality Industry Audit"
+  },
+  { 
+    src: "./revenue-income-money-profit-costs-budget-banking-concept.jpg", 
+    title: "Finch by Cormorant",
+    service: "Financial Audit & Risk Assessment"
+  },
+  { 
+    src: "./header2.png", 
+    title: "Finfras Consulting P Ltd",
+    service: "Business Consultancy Audit"
+  },
+  { 
+    src: "./stock-market-exchange-economics-investment-graph.jpg", 
+    title: "JS Plastics",
+    service: "Manufacturing Process Audit"
+  },
+  { 
+    src: "./finance-economics-work-male-discussion-laptop.jpg", 
+    title: "Hotel Grand Palace",
+    service: "Hotel Operations Audit"
+  },
+  { 
+    src: "./businesspeople-working-finance-accounting-analyze-financi.jpg", 
+    title: "Eco Farms Property Developers",
+    service: "Sustainable Development Audit"
+  },
+  { 
+    src: "./businesspeople-working-finance-accounting-analyze-financial-graph-budget-planning-future-office-room.jpg", 
+    title: "Hi Power Equipment Co",
+    service: "Equipment Manufacturing Audit"
+  },
 ];
 
 const Gallery = () => {
@@ -23,7 +59,7 @@ const Gallery = () => {
         </Typography>
         <Box width="60px" height="4px" bgcolor="#627DFE" mx="auto" my={2} />
         <Typography variant="body1" textAlign="center" mb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.
+          Explore our successful audit projects across various industries and sectors.
         </Typography>
 
         {/* Gallery Grid - 3x3 Layout */}
@@ -35,7 +71,7 @@ const Gallery = () => {
                   position: "relative",
                   overflow: "hidden",
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                  "&:hover .overlay": { opacity: 1 },
+                  "&:hover .overlay": { opacity: 1 },cursor:'pointer'
                 }}
               >
                 {/* Image */}
@@ -54,16 +90,24 @@ const Gallery = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    background: "rgba(0, 0, 0, 0.6)",
+                    background: "linear-gradient(135deg, rgba(98, 120, 254, 0.9), rgba(93, 160, 251, 0.9))",
                     color: "white",
                     display: "flex",
+                    flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
                     opacity: 0,
                     transition: "opacity 0.3s ease-in-out",
+                    textAlign: "center",
+                    padding: "20px",
                   }}
                 >
-                  <Typography variant="h6" fontWeight="bold">{item.title}</Typography>
+                  <Typography variant="h6" fontWeight="bold" mb={1}>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" fontSize="14px" fontWeight="400">
+                    {item.service}
+                  </Typography>
                 </Box>
               </Box>
             </Grid>

@@ -7,6 +7,9 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import TranslateIcon from "@mui/icons-material/Translate";
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+
+
 
 const services = [
   {
@@ -42,6 +45,7 @@ const services = [
 ];
 
 const Services = () => {
+  const Navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -68,60 +72,63 @@ const Services = () => {
         </Typography>
 
         {/* Services Grid */}
-        <Grid
-          container
-          spacing={4}
-          justifyContent="center"
-          alignItems="stretch"
-        >
-          {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box
-                sx={{
-                  textAlign: "center",
-                  p: 3,
-                  backdropFilter: "blur(5px)",
-                  borderRadius: 3,
-                  transition: "all 0.3s",
-                  "&:hover": {
-                    transform: "translateY(-5px)",
-                    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-                    cursor: "pointer",
-                  },
-                }}
-              >
-                {/* Icon Circle */}
-                <Box
-                  sx={{
-                    background: "linear-gradient(to right, #627DFE, #5DA1FC)",
-                    borderRadius: "50%",
-                    width: { xs: 70, sm: 80, md: 90 },
-                    height: { xs: 70, sm: 80, md: 90 },
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                    color: "white",
-                    mb: 2,
-                    mx: "auto",
-                  }}
-                >
-                  {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
-                </Box>
+   
 
-                {/* Card Content */}
-                <CardContent>
-                  <Typography variant="h3" fontWeight="500px" fontSize="20px">
-                    {service.title}
-                  </Typography>
-                  <Typography variant="body2" mt={1}>
-                    {service.description}
-                  </Typography>
-                </CardContent>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+<Grid
+  container
+  spacing={4}
+  justifyContent="center"
+  alignItems="stretch"
+>
+  {services.map((service, index) => (
+    <Grid item xs={12} sm={6} md={4} key={index}>
+      <Box
+        onClick={() => Navigate('/services')}
+        sx={{
+          textAlign: "center",
+          p: 3,
+          backdropFilter: "blur(5px)",
+          borderRadius: 3,
+          transition: "all 0.3s",
+          "&:hover": {
+            transform: "translateY(-5px)",
+            boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+            cursor: "pointer",
+          },
+        }}
+      >
+        {/* Icon Circle */}
+        <Box
+          sx={{
+            background: "linear-gradient(to right, #627DFE, #5DA1FC)",
+            borderRadius: "50%",
+            width: { xs: 70, sm: 80, md: 90 },
+            height: { xs: 70, sm: 80, md: 90 },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            color: "white",
+            mb: 2,
+            mx: "auto",
+          }}
+        >
+          {React.cloneElement(service.icon, { sx: { fontSize: 40 } })}
+        </Box>
+        
+        {/* Card Content */}
+        <CardContent>
+          <Typography variant="h3" fontWeight="500px" fontSize="20px">
+            {service.title}
+          </Typography>
+          <Typography variant="body2" mt={1}>
+            {service.description}
+          </Typography>
+        </CardContent>
+      </Box>
+    </Grid>
+  ))}
+</Grid>
       </Container>
     </Box>
   );

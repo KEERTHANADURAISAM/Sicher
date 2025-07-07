@@ -29,12 +29,12 @@ const TeamSection = () => {
     <Container sx={{ py: 6,backgroundColor:'white'}}>
       {/* Section Title */}
       <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: "bold" }}>
-        MEET THE TEAM
-      </Typography>
-      <Box width="60px" height="4px" bgcolor="#627DFE" mx="auto" my={2} />
-      <Typography variant="body1" align="center" color="textSecondary" paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.
-      </Typography>
+  MEET THE TEAM
+</Typography>
+<Box width="60px" height="4px" bgcolor="#627DFE" mx="auto" my={2} />
+<Typography variant="body1" align="center" color="textSecondary" paragraph>
+  Meet our experienced team of certified auditors and compliance experts. We bring together diverse skills and industry knowledge to deliver exceptional audit services tailored to your organization's unique needs.
+</Typography>
 
       {/* Team Members Grid */}
       <Grid container spacing={3} justifyContent="center">

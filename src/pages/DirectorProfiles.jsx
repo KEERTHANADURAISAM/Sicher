@@ -16,6 +16,7 @@ import {
   School as SchoolIcon, 
   TrendingUp as TrendingUpIcon 
 } from '@mui/icons-material';
+  import { Link } from 'react-router-dom';
 
 const directors = [
   {
@@ -52,21 +53,7 @@ const directors = [
     secondaryColor: '#303f9f',
     image: '/sathiyaprakash.jpg',
   },
-  {
-    name: 'Aravind Duraisamy',
-    qualifications: 'B.Com., ACMA (Cost Accountant)',
-    position: 'Director',
-    company: 'Sicher Shared Services P Ltd',
-    experience: `Qualified Cost Accountant with 8 years of experience in the field of Taxes and Auditing.`,
-    bio: `Also has 3 years of industry experience at Elgi Rubber Ltd, Coimbatore.
-      Currently managing GST Returns, Cost Audit, and Assessments for our clients.`,
-    initials: 'AD',
-    yearsExp: '8 Years',
-    specialties: ['GST Returns', 'Cost Audit', 'Assessments', 'Industry Experience'],
-    primaryColor: '#00acc1',
-    secondaryColor: '#0097a7',
-    image: '/aravind.jpg',
-  },
+ 
 ];
 
 const DirectorProfiles = () => {
@@ -353,28 +340,30 @@ const DirectorProfiles = () => {
             <Typography variant="body1" color="text.secondary" mb={3}>
               Our experienced directors are here to guide you through complex tax matters and ensure your financial success.
             </Typography>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                background: 'linear-gradient(135deg, #1976d2 0%, #00acc1 100%)',
-                borderRadius: 8,
-                px: 4,
-                py: 1.5,
-                fontSize: '1rem',
-                fontWeight: 'bold',
-                textTransform: 'none',
-                boxShadow: '0 8px 24px rgba(25, 118, 210, 0.3)',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  background: 'linear-gradient(135deg, #1565c0 0%, #0097a7 100%)',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 12px 32px rgba(25, 118, 210, 0.4)',
-                }
-              }}
-            >
-              Get Started Today
-            </Button>
+<Button
+  component={Link}
+  to="/contact"
+  variant="contained"
+  size="large"
+  sx={{
+    background: 'linear-gradient(135deg, #1976d2 0%, #00acc1 100%)',
+    borderRadius: 8,
+    px: 4,
+    py: 1.5,
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    textTransform: 'none',
+    boxShadow: '0 8px 24px rgba(25, 118, 210, 0.3)',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      background: 'linear-gradient(135deg, #1565c0 0%, #0097a7 100%)',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 12px 32px rgba(25, 118, 210, 0.4)',
+    }
+  }}
+>
+  Get Started Today
+</Button>
           </Paper>
         </Box>
       </Container>

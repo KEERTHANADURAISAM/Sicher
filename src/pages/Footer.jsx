@@ -34,9 +34,18 @@ export default function Footer() {
               <IconButton color="inherit" aria-label="Twitter" size="small">
                 <Twitter size={20} />
               </IconButton>
-              <IconButton color="inherit" aria-label="LinkedIn" size="small">
-                <Linkedin size={20} />
-              </IconButton>
+             <IconButton
+  color="inherit"
+  aria-label="LinkedIn"
+  size="small"
+  component="a"
+  href="https://www.linkedin.com/in/jeeva-thangavelu-97a8a639/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Linkedin size={20} />
+</IconButton>
+
             </Box>
           </Grid>
           

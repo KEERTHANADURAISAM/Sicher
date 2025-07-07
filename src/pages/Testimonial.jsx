@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Shasha Solar P Ltd",
     company: "Solar Energy Solutions",
-    feedback: "Their expertise in digital marketing has significantly boosted our online presence and customer engagement. The team's understanding of the renewable energy sector is exceptional.",
+    feedback: "Their comprehensive income tax services have streamlined our financial processes significantly. The team's expertise in tax planning for renewable energy businesses has saved us substantial costs while ensuring full compliance.",
     industry: "Solar Energy",
     logo: "https://via.placeholder.com/80x80/4CAF50/FFFFFF?text=SS",
     rating: 5
@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Pearl Property Developers",
     company: "Real Estate Development",
-    feedback: "Outstanding service in brand development and marketing strategies. They helped us reach our target audience effectively and increased our property inquiries by 200%.",
+    feedback: "Exceptional company law consultancy services that guided us through complex property development regulations. Their corporate governance advisory has strengthened our business structure and investor confidence.",
     industry: "Real Estate",
     logo: "https://via.placeholder.com/80x80/2196F3/FFFFFF?text=PPD",
     rating: 5
@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Hotel Prince Gardens",
     company: "Hospitality",
-    feedback: "The digital transformation of our hotel's marketing has been remarkable. Online bookings increased dramatically, and our brand visibility in the hospitality sector improved significantly.",
+    feedback: "Outstanding auditing services that provided clear insights into our financial health. Their tax planning strategies for the hospitality sector have optimized our tax liabilities while maintaining transparency.",
     industry: "Hospitality",
     logo: "https://via.placeholder.com/80x80/FF9800/FFFFFF?text=HPG",
     rating: 5
@@ -29,7 +29,7 @@ const testimonials = [
   {
     name: "Finch by Cormorant",
     company: "Restaurant & Dining",
-    feedback: "Their creative approach to restaurant marketing and social media management has brought us new customers every week. The ROI on our marketing investment has been exceptional.",
+    feedback: "Professional income tax services tailored to the restaurant industry. Their advisory on corporate governance has helped us implement better financial controls and compliance procedures.",
     industry: "Food & Beverage",
     logo: "https://via.placeholder.com/80x80/795548/FFFFFF?text=FC",
     rating: 5
@@ -37,7 +37,7 @@ const testimonials = [
   {
     name: "Finfras Consulting P Ltd",
     company: "Business Consultancy",
-    feedback: "Professional, reliable, and results-driven. Their understanding of B2B marketing in the consulting space has helped us establish strong industry connections and grow our client base.",
+    feedback: "Reliable company law consultancy and auditing services that have enhanced our business operations. Their tax planning advisory has been instrumental in optimizing our consulting firm's financial structure.",
     industry: "Consulting",
     logo: "https://via.placeholder.com/80x80/607D8B/FFFFFF?text=FC",
     rating: 5
@@ -45,7 +45,7 @@ const testimonials = [
   {
     name: "JS Plastics",
     company: "Manufacturing",
-    feedback: "The strategic marketing approach for our automotive parts business has opened new market opportunities. Their industrial marketing expertise is top-notch.",
+    feedback: "Comprehensive auditing services that identified key areas for financial improvement. Their expertise in income tax planning for manufacturing businesses has resulted in significant cost savings.",
     industry: "Manufacturing",
     logo: "https://via.placeholder.com/80x80/9C27B0/FFFFFF?text=JSP",
     rating: 5
@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: "Hotel Grand Palace",
     company: "Luxury Hospitality",
-    feedback: "Exceptional work in elevating our brand image and online presence. The sophisticated marketing campaigns have attracted high-end clientele and improved our occupancy rates.",
+    feedback: "Exceptional corporate governance advisory that elevated our management standards. Their tax planning and advisory services have optimized our luxury hospitality operations while ensuring regulatory compliance.",
     industry: "Hospitality",
     logo: "https://via.placeholder.com/80x80/E91E63/FFFFFF?text=HGP",
     rating: 5
@@ -61,7 +61,7 @@ const testimonials = [
   {
     name: "Eco Farms Property Developers",
     company: "Sustainable Development",
-    feedback: "Their expertise in marketing eco-friendly projects has been invaluable. They understand the sustainability market and helped us connect with environmentally conscious buyers.",
+    feedback: "Expert company law consultancy for our sustainable development projects. Their income tax services and corporate governance advisory have supported our eco-friendly business model effectively.",
     industry: "Real Estate",
     logo: "https://via.placeholder.com/80x80/8BC34A/FFFFFF?text=EFP",
     rating: 5
@@ -69,13 +69,12 @@ const testimonials = [
   {
     name: "Hi Power Equipment Co",
     company: "Electrical Manufacturing",
-    feedback: "Outstanding technical marketing support for our transformer business. They helped us reach industrial clients effectively and establish our brand in the electrical equipment sector.",
+    feedback: "Outstanding auditing services that provided valuable insights into our electrical equipment business. Their tax planning strategies and corporate governance advisory have strengthened our industrial operations.",
     industry: "Electrical Equipment",
     logo: "https://via.placeholder.com/80x80/FF5722/FFFFFF?text=HPE",
     rating: 5
   }
 ];
-
 const StarRating = ({ rating }) => {
   return (
     <Box display="flex" justifyContent="center" mb={1}>
