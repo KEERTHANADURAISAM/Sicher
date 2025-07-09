@@ -6,7 +6,6 @@ import {
   Paper,
   Avatar,
   Chip,
-  Divider,
   Button,
   Container
 } from '@mui/material';
@@ -24,12 +23,8 @@ const directors = [
     qualifications: 'B.Com., & CA (Final)',
     position: 'Managing Director',
     company: 'Sicher Shared Services P Ltd',
-    experience: `As the Director of Sicher Shared Services P Ltd, I am privileged to lead a team of dedicated professionals
-      in our mission to provide exemplary tax consultancy services. With a profound understanding of the intricate
-      landscape of taxation and a commitment to client-centric solutions, I bring 12 years of experience in guiding
-      businesses and individuals towards financial success and compliance excellence.`,
-    bio: `My journey in the realm of taxation began 12 years ago, driven by a passion for simplifying complex tax matters
-      and helping clients navigate regulatory challenges seamlessly.`,
+    experience: `As the Director of Sicher Shared Services P Ltd, I am privileged to lead a team of dedicated professionals in our mission to provide exemplary tax consultancy services. I bring 12 years of experience in guiding businesses and individuals towards financial success and compliance excellence.`,
+    bio: `My journey in taxation began 12 years ago, driven by a passion for simplifying complex tax matters and helping clients navigate regulatory challenges.`,
     initials: 'JT',
     yearsExp: '12 Years',
     specialties: ['Income Tax', 'Corporate Tax', 'International Tax', 'Tax Planning'],
@@ -55,7 +50,7 @@ const directors = [
 
 const DirectorProfiles = () => {
   return (
-    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f8fafc, #e2e8f0)', py: 8, px: 2 }}>
+    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f8fafc, #e2e8f0)', py: 8, px: 2, overflowX: 'hidden' }}>
       <Container maxWidth="md">
         {/* Header */}
         <Box textAlign="center" mb={8}>
@@ -84,8 +79,8 @@ const DirectorProfiles = () => {
           <Box sx={{ width: 96, height: 4, background: 'linear-gradient(135deg, #1976d2, #1565c0)', mx: 'auto', borderRadius: 2, mt: 2 }} />
         </Box>
 
-        {/* Cards - Single Column */}
-        <Grid container spacing={6} direction="column">
+        {/* Director Cards - Single Column, Responsive */}
+        <Grid container direction="column" spacing={6} sx={{ width: '100%', maxWidth: '100%', mx: 'auto' }}>
           {directors.map((director, index) => (
             <Grid item key={index}>
               <Paper
@@ -93,7 +88,7 @@ const DirectorProfiles = () => {
                 sx={{
                   borderRadius: 4,
                   overflow: 'hidden',
-                  px: 4,
+                  px: { xs: 2, sm: 4 },
                   py: 5,
                   background: 'linear-gradient(135deg, #ffffff 0%, #f7fafc 100%)',
                   border: `1px solid ${director.primaryColor}25`,
@@ -101,7 +96,7 @@ const DirectorProfiles = () => {
                 }}
               >
                 {/* Avatar and Info */}
-                <Box display="flex" alignItems="flex-start" mb={3} gap={3}>
+                <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} alignItems="flex-start" mb={3} gap={3}>
                   <Box position="relative">
                     <Avatar
                       src={director.image}
@@ -212,7 +207,7 @@ const DirectorProfiles = () => {
           ))}
         </Grid>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <Box textAlign="center" mt={10}>
           <Paper
             elevation={2}
