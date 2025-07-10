@@ -107,19 +107,21 @@ const DirectorProfiles = () => {
                     maxWidth: { sm: 200 }
                   }}
                 >
-                  <Box
-                    component="img"
-                    src={director.image}
-                    alt={director.name}
-                    sx={{
-                      width: '100%',
-                      height: { xs: 'auto', sm: 620 },
-                      objectFit: 'cover',
-                      borderRadius: 3,
-                      border: `4px solid ${director.primaryColor}30`,
-                      boxShadow: `0 8px 24px ${director.primaryColor}40`
-                    }}
-                  />
+
+  <Box
+    component="img"
+    src={director.image}
+    alt={director.name}
+    sx={{
+      width: '100%',
+      height: { xs: 260, sm: 320, md: 360 }, // Adjust height responsively
+      objectFit: 'cover',
+      borderRadius: 3,
+      border: `4px solid ${director.primaryColor}30`,
+      boxShadow: `0 8px 24px ${director.primaryColor}40`
+    }}
+  />
+
                   <Box
                     sx={{
                       position: 'absolute',
