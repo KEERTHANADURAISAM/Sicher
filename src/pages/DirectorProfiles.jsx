@@ -139,6 +139,10 @@ const DirectorProfiles = () => {
                       background: `linear-gradient(135deg, ${director.primaryColor}, ${director.secondaryColor})`,
                       border: `3px solid ${director.primaryColor}30`,
                       boxShadow: `0 8px 20px ${director.primaryColor}40`,
+                      '& img': {
+                        objectFit: 'cover',
+                        objectPosition: 'center top',
+                      }
                     }}
                   >
                     {!director.image && director.initials}
