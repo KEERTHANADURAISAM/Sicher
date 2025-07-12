@@ -19,10 +19,12 @@ import Home from "./pages/Home";
 import Footer from "./pages/Footer";
 import AboutSection from "./pages/AboutSection";
 import ServicePages from "./pages/ServicePages";
+import ScrollToTop from "./pages/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
