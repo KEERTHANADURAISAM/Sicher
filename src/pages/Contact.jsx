@@ -26,19 +26,26 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
+const sendWhatsAppMessage = (e) => {
+  e.preventDefault();
+  if (!validateForm()) return;
 
-    emailjs
-      .send("service_b2zg2d5", "template_v0yfjjc", formData, "da640-A6BC8T790z-")
-      .then(() => {
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => toast.error("Failed to send message. Try again."));
-  };
+  const { name, email, message } = formData;
 
+  const phoneNumber = "9994385879"; // 📱 Your WhatsApp number with country code, no '+' or spaces
+  const encodedMessage = encodeURIComponent(
+    `Hello, I am ${name}%0AMy email: ${email}%0A${message}`
+  );
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
+
+  toast.success("Opening WhatsApp...");
+  setFormData({ name: "", email: "", message: "" });
+};
+
+  
   return (
     <Box
       sx={{
@@ -155,7 +162,7 @@ const Contact = () => {
             <Typography variant="h5" fontWeight="bold" textAlign="center" mb={2}>
               Let's Talk
             </Typography>
-            <form onSubmit={sendEmail}>
+            <form onSubmit={sendWhatsAppMessage}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
