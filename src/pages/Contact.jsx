@@ -32,7 +32,7 @@ const sendWhatsAppMessage = (e) => {
 
   const { name, email, message } = formData;
 
-  const phoneNumber = "919994385879"; // India code + number
+  const phoneNumber = "918667289653"; // India code + number
   const encodedMessage = encodeURIComponent(
     `Hello, I am ${name}\nMy email: ${email}\n\n${message}`
   );
