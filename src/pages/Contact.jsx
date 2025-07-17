@@ -32,18 +32,18 @@ const sendWhatsAppMessage = (e) => {
 
   const { name, email, message } = formData;
 
-  const phoneNumber = "919994385879"; // 📱 Your WhatsApp number with country code, no '+' or spaces
+  const phoneNumber = "919994385879"; // India code + number
   const encodedMessage = encodeURIComponent(
-    `Hello, I am ${name}My email: ${email}${message}`
+    `Hello, I am ${name}\nMy email: ${email}\n\n${message}`
   );
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   window.open(whatsappURL, "_blank");
-
-  toast.success("Opening WhatsApp...");
+  toast.success("Redirecting to WhatsApp...");
   setFormData({ name: "", email: "", message: "" });
 };
+
 
   
   return (
