@@ -34,7 +34,7 @@ const sendWhatsAppMessage = (e) => {
 
   const phoneNumber = "919994385879"; // 📱 Your WhatsApp number with country code, no '+' or spaces
   const encodedMessage = encodeURIComponent(
-    `Hello, I am ${name}%0AMy email: ${email}%0A${message}`
+    `Hello, I am ${name}My email: ${email}${message}`
   );
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
