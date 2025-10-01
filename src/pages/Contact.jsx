@@ -8,6 +8,7 @@ import { Toaster, toast } from "react-hot-toast";
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({});
+  const [sending, setSending] = useState(false);
 
   const validateForm = () => {
     let newErrors = {};
@@ -26,30 +27,60 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-const sendWhatsAppMessage = (e) => {
-  e.preventDefault();
-  if (!validateForm()) return;
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
 
-  const { name, email, message } = formData;
+    setSending(true);
 
-  const phoneNumber = "918667289653"; // India code + number
-  const encodedMessage = encodeURIComponent(
-    `Hello, I am ${name}\nMy email: ${email}\n\n${message}`
-  );
+    // Template params matching your EmailJS template exactly
+    const templateParams = {
+      name: formData.name,        // Changed from 'from_name' to 'name'
+      email: formData.email,      // Changed from 'from_email' to 'email'
+      message: formData.message,
+      title: "Contact Form"       // For {{title}} in subject
+    };
 
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    console.log("Sending email with params:", templateParams);
 
-  window.open(whatsappURL, "_blank");
-  toast.success("Redirecting to WhatsApp...");
-  setFormData({ name: "", email: "", message: "" });
-};
-
-
+    emailjs
+      .send(
+        "service_3h36f23",      // Your Service ID
+        "template_hk2jg47",     // Your Template ID
+        templateParams,          // Must match {{from_name}}, {{from_email}}, {{message}}
+        "wbt1xDDq-KpaGTVIU"     // Your Public Key
+      )
+      .then(
+        (response) => {
+          console.log("✅ EMAIL SENT SUCCESS!", response.status, response.text);
+          toast.success("Message sent successfully! We'll get back to you soon.", {
+            duration: 4000,
+            style: {
+              background: '#4CAF50',
+              color: '#fff',
+            },
+          });
+          setFormData({ name: "", email: "", message: "" });
+          setErrors({});
+          setSending(false);
+        },
+        (error) => {
+          console.error("❌ EMAIL SEND FAILED:", error);
+          toast.error(`Failed to send: ${error.text || "Please try again"}`, {
+            duration: 4000,
+            style: {
+              background: '#f44336',
+              color: '#fff',
+            },
+          });
+          setSending(false);
+        }
+      );
+  };
   
   return (
     <Box
       sx={{
-        // background: "linear-gradient(to right, #627DFE, #5DA1FC)",
         py: 10,
         display: "flex",
         justifyContent: "center",
@@ -58,7 +89,7 @@ const sendWhatsAppMessage = (e) => {
       }}
     >
       <Container>
-        <Toaster /> {/* Toaster added here */}
+        <Toaster position="top-center" />
         <Grid
           container
           spacing={0}
@@ -106,14 +137,14 @@ const sendWhatsAppMessage = (e) => {
               {[
                 { icon: <LocationOn sx={{ color: "#FFD700", fontSize: 28 }} />, text: "Sicher Shared Services Private Limited  89, Balaji Nagar, Kalapatti Post, Coimbatore – 641048" },
                 { icon: <Phone sx={{ color: "#32CD32", fontSize: 28 }} />, text: "8667289653" },
-                { icon: <Email sx={{ color: "#FF4500", fontSize: 28 }} />, text: "ca.jeeva93@gmail.com" }
+                { icon: <Email sx={{ color: "#FF4500", fontSize: 28 }} />, text: "sicherinc@gmail.com" }
               ].map((item, index) => (
                 <Box
                   key={index}
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: { xs: "center", sm: "flex-start" }, // Aligns left on larger screens
+                    justifyContent: { xs: "center", sm: "flex-start" },
                     gap: 1.5,
                     py: 1,
                     px: 2,
@@ -156,13 +187,13 @@ const sendWhatsAppMessage = (e) => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-            maxWidth:600
+              maxWidth: 600
             }}
           >
             <Typography variant="h5" fontWeight="bold" textAlign="center" mb={2}>
               Let's Talk
             </Typography>
-            <form onSubmit={sendWhatsAppMessage}>
+            <form onSubmit={sendEmail}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -174,6 +205,7 @@ const sendWhatsAppMessage = (e) => {
                     onChange={handleChange}
                     error={!!errors.name}
                     helperText={errors.name}
+                    disabled={sending}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -186,6 +218,7 @@ const sendWhatsAppMessage = (e) => {
                     onChange={handleChange}
                     error={!!errors.email}
                     helperText={errors.email}
+                    disabled={sending}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -200,6 +233,7 @@ const sendWhatsAppMessage = (e) => {
                     onChange={handleChange}
                     error={!!errors.message}
                     helperText={errors.message}
+                    disabled={sending}
                   />
                 </Grid>
               </Grid>
@@ -207,19 +241,20 @@ const sendWhatsAppMessage = (e) => {
                 <Button
                   type="submit"
                   variant="contained"
+                  disabled={sending}
                   sx={{
                     width: "50%",
                     bgcolor: "#627DFE",
                     ":hover": { bgcolor: "#4a5bdc" },
+                    opacity: sending ? 0.7 : 1,
                   }}
                 >
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                 </Button>
               </Box>
             </form>
           </Grid>
         </Grid>
-      
       </Container>
     </Box>
   );
