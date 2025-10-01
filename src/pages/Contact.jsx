@@ -38,10 +38,10 @@ const Contact = () => {
       name: formData.name,        // Changed from 'from_name' to 'name'
       email: formData.email,      // Changed from 'from_email' to 'email'
       message: formData.message,
-      title: "Contact Form"       // For {{title}} in subject
+      title: "Client Inquiry Form"       // For {{title}} in subject
     };
 
-    console.log("Sending email with params:", templateParams);
+    // console.log("Sending email with params:", templateParams);
 
     emailjs
       .send(
@@ -52,7 +52,7 @@ const Contact = () => {
       )
       .then(
         (response) => {
-          console.log("✅ EMAIL SENT SUCCESS!", response.status, response.text);
+          // console.log("✅ EMAIL SENT SUCCESS!", response.status, response.text);
           toast.success("Message sent successfully! We'll get back to you soon.", {
             duration: 4000,
             style: {
