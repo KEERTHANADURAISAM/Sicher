@@ -86,7 +86,7 @@ export default function Footer() {
               <Mail size={18} />
               <Typography variant="body2" sx={{ ml: 1 }}>
                 <Link href="mailto:ca.jeeva93@gmail.com" color="inherit" underline="hover">
-                  ca.jeeva93@gmail.com
+                  sicherinc@gmail.com
                 </Link>
               </Typography>
             </Box>
